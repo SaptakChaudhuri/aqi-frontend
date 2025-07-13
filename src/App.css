@@ -1,38 +1,204 @@
-.App {
-  text-align: center;
+/* ========== Global Styling ========== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body.dark {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* ========== App Layout ========== */
+.app-container {
+  padding: 2rem;
   min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* ========== Header ========== */
+.header {
+  max-width: 960px;
+  margin: 0 auto 2rem;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2a6df0;
+}
+
+body.dark .title {
+  color: #4dabf7;
+}
+
+.toggle-btn {
+  background: none;
+  border: 1px solid #aaa;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background-color: white;
+}
+
+body.dark .toggle-btn {
+  background-color: #333;
+  color: #eee;
+  border-color: #555;
+}
+
+/* ========== Input Group ========== */
+.input-group {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.input-group input {
+  flex: 1;
+  min-width: 180px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.input-group button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #2a6df0;
   color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.input-group button:hover {
+  background-color: #1a54c2;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+body.dark .input-group input {
+  background-color: #333;
+  color: white;
+  border-color: #555;
+}
+
+body.dark .input-group button {
+  background-color: #4dabf7;
+  color: black;
+}
+
+/* ========== Errors ========== */
+.error {
+  text-align: center;
+  color: red;
+  margin-bottom: 1rem;
+}
+
+/* ========== AQI Result Card ========== */
+.result-card {
+  max-width: 960px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+body.dark .result-card {
+  background: #2a2a2a;
+}
+
+/* ========== AQI Header ========== */
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* ========== AQI Badge ========== */
+.aqi-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.good {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.moderate {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.unhealthy-sensitive {
+  background-color: #ffeeba;
+  color: #856404;
+}
+
+.unhealthy {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* ========== Chart Container ========== */
+.chart-container {
+  margin-top: 1.5rem;
+}
+
+/* ========== Predicted AQI Highlight ========== */
+.predicted-highlight {
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.predicted-value {
+  color: #5b21b6;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+body.dark .predicted-value {
+  color: #c084fc;
+}
+
+/* ========== Mobile Adjustments ========== */
+@media (max-width: 600px) {
+  .title {
+    text-align: center;
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .result-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .input-group {
+    flex-direction: column;
+    align-items: stretch;
   }
 }
