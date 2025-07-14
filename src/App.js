@@ -69,7 +69,7 @@ function App() {
   return (
     <div className="app-container">
       <div className="header">
-        <h1 className="title">🌍 Air Quality Predictor</h1>
+        <h1 className="title">🌍BreathFree: Your global air quality forecaster</h1>
         <button className="toggle-btn" onClick={() => setDarkMode(!darkMode)}>
           {darkMode ? '☀️ Light Mode' : '🌙 Dark Mode'}
         </button>
