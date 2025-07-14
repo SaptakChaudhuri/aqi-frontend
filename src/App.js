@@ -51,9 +51,8 @@ function App() {
     try {
       const { latitude, longitude, name } = await geocodePlace();
       const res = await axios.get(
-  `https://aqi-express-backend.onrender.com/fetch-aqi?latitude=${latitude}&longitude=${longitude}`
+  `https://aqi-vercel-backend.vercel.app/fetch-aqi?latitude=${latitude}&longitude=${longitude}`
 );
-
       setAqi({ ...res.data, name });
     } catch (err) {
       setError('Failed to fetch AQI data');
